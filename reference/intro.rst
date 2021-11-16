@@ -6,6 +6,54 @@ The Developer Reference aims to provide technical details and API information to
 
 In the following documentation, some strings have been shortened or wrapped: “[…]” indicates extra data was removed, and lines ending in a single backslash “\\” are continued below. If you hover your mouse over a paragraph, cross-reference links will be shown in blue. If you hover over a cross-reference link, a brief definition of the term will be displayed in a tooltip.
 
+JSON-RPC Interface
+^^^^^^^^^^^^^^^^^^^
+
+The headless daemon `hived` has the JSON-RPC API enabled by default, the GUI
+`hive-qt` has it disabled by default. This can be changed with the `-server`
+option. In the GUI it is possible to execute RPC methods in the Debug Console
+Dialog.
+
+Setup JSON-RPC
+^^^^^^^^^^^^^^^^^^^
+By default port 9766 for mainnet, port 19766 for testnet,
+and port 19443 for regtest.
+
+We can add rpc user in  ~/.hive/hive.conf
+::
+
+  rpcuser = ru
+  rpcpassword = rp
+  daemon = 1
+  rpcworkqueue = 200
+
+
+start daemon
+::
+
+  hived
+
+
+Example
+^^^^^^^^^^^^^^^^^^^
+getblockcount
+
+Returns the height of the most-work fully-validated chain.
+
+The genesis block has height 0.
+
+cli
+::
+
+  bitcoin-cli getblockcount
+
+
+json-rpc
+::
+    
+  curl --user myusername --data-binary '{"jsonrpc": "1.0", "id": "curltest", "method": "getblockcount", "params": []}' -H 'content-type: text/plain;' http://127.0.0.1:9766/
+
+
 Not A Specification
 ^^^^^^^^^^^^^^^^^^^
 
