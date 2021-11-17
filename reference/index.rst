@@ -8,4 +8,5 @@ Find technical details and API documentation.
   :caption: Contents:
   
   intro
+  hivecli
   rpc/index
