@@ -4,6 +4,39 @@
 RPC API Reference
 =================
 
+Addressindex RPCs
+-----------------
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Contents:
+
+  getaddressbalance
+  getaddressdeltas
+  getaddressmempool
+  getaddresstxids
+  getaddressutxos
+
+Assets RPCs
+-----------
+
+.. toctree::
+  :maxdepth: 1
+  :caption: Contents:
+
+  getassetdata
+  getcacheinfo 
+  getsnapshot
+  issue
+  issueunique
+  listassets
+  listmyassets
+  purgesnapshot
+  reissue 
+  transfer
+  transferfromaddress
+  transferfromaddresses
+
 Blockchain RPCs
 ---------------
 
@@ -11,14 +44,15 @@ Blockchain RPCs
   :maxdepth: 1
   :caption: Contents:
 
+  clearmempool
+  decodeblock
   getbestblockhash
   getblock
   getblockchaininfo
   getblockcount
-  getblockfilter
   getblockhash
+  getblockhashes
   getblockheader
-  getblockstats
   getchaintips
   getchaintxstats
   getdifficulty
@@ -27,13 +61,13 @@ Blockchain RPCs
   getmempoolentry
   getmempoolinfo
   getrawmempool
+  getspentinfo
   gettxout
   gettxoutproof
   gettxoutsetinfo
   preciousblock
   pruneblockchain
   savemempool
-  scantxoutset
   verifychain
   verifytxoutproof
 
@@ -43,10 +77,10 @@ Control RPCs
 .. toctree::
   :maxdepth: 1
 
+  getinfo
   getmemoryinfo
   getrpcinfo
   help
-  logging
   stop
   uptime
 
@@ -55,10 +89,11 @@ Generating RPCs
 
 .. toctree::
   :maxdepth: 1
-
-  generateblock
+  
+  generate
   generatetoaddress
-  generatetodescriptor
+  getgenerate
+  setgenerate
 
 Mining RPCs
 -----------
@@ -67,11 +102,25 @@ Mining RPCs
   :maxdepth: 1
 
   getblocktemplate
+  getkawpowhash
   getmininginfo
   getnetworkhashps
+  pprpcsb
   prioritisetransaction
   submitblock
-  submitheader
+
+Messages RPCs
+-------------
+
+.. toctree::
+  :maxdepth: 1
+
+  clearmessages 
+  sendmessage
+  subscribetochannel 
+  unsubscribefromchannel 
+  viewallmessagechannels 
+  viewallmessages 
 
 Network RPCs
 ------------
@@ -86,7 +135,6 @@ Network RPCs
   getconnectioncount
   getnettotals
   getnetworkinfo
-  getnodeaddresses
   getpeerinfo
   listbanned
   ping
@@ -99,23 +147,63 @@ Rawtransactions RPCs
 .. toctree::
   :maxdepth: 1
 
-  analyzepsbt
-  combinepsbt
   combinerawtransaction
-  converttopsbt
-  createpsbt
   createrawtransaction
-  decodepsbt
   decoderawtransaction
   decodescript
-  finalizepsbt
   fundrawtransaction
   getrawtransaction
-  joinpsbts
   sendrawtransaction
-  signrawtransactionwithkey
+  signrawtransaction
   testmempoolaccept
-  utxoupdatepsbt
+
+Restricted assets RPCs
+----------------------
+
+.. toctree::
+  :maxdepth: 1
+
+  addtagtoaddress
+  checkaddressrestriction
+  checkaddresstag
+  checkglobalrestriction
+  freezeaddress
+  freezerestrictedasset
+  getverifierstring
+  issuequalifierasset
+  issuerestrictedasset
+  isvalidverifierstring
+  listaddressesfortag
+  listaddressrestrictions
+  listglobalrestrictions
+  listtagsforaddress
+  reissuerestrictedasset
+  removetagfromaddress
+  transferqualifier 
+  unfreezeaddress
+  unfreezerestrictedasset
+
+Restricted RPCs
+---------------
+
+.. toctree::
+  :maxdepth: 1
+
+  viewmyrestrictedaddresses 
+  viewmytaggedaddresses 
+
+Rewards RPCs
+------------
+
+.. toctree::
+  :maxdepth: 1
+
+  cancelsnapshotrequest
+  distributereward
+  getdistributestatus
+  getsnapshotrequest
+  listsnapshotrequests
+  requestsnapshot
 
 Util RPCs
 ---------
@@ -124,10 +212,8 @@ Util RPCs
   :maxdepth: 1
 
   createmultisig
-  deriveaddresses
+  estimatefee
   estimatesmartfee
-  getdescriptorinfo
-  getindexinfo
   signmessagewithprivkey
   validateaddress
   verifymessage
@@ -144,60 +230,47 @@ with wallet support, which is the default.
   abandontransaction
   abortrescan
   addmultisigaddress
+  addwitnessaddress
   backupwallet
   bumpfee
-  createwallet
   dumpprivkey
   dumpwallet
   encryptwallet
-  getaddressesbylabel
-  getaddressinfo
+  getaccount
+  getaccountaddress
+  getaddressesbyaccount
   getbalance
-  getbalances
+  getmasterkeyinfo
+  getmywords
   getnewaddress
   getrawchangeaddress
+  getreceivedbyaccount
   getreceivedbyaddress
-  getreceivedbylabel
   gettransaction
   getunconfirmedbalance
   getwalletinfo
   importaddress
-  importdescriptors
   importmulti
   importprivkey
   importprunedfunds
   importpubkey
   importwallet
   keypoolrefill
+  listaccounts
   listaddressgroupings
-  listlabels
   listlockunspent
+  listreceivedbyaccount
   listreceivedbyaddress
-  listreceivedbylabel
   listsinceblock
   listtransactions
   listunspent
-  listwalletdir
   listwallets
-  loadwallet
   lockunspent
-  psbtbumpfee
   removeprunedfunds
   rescanblockchain
-  send
+  sendfrom
+  sendfromaddress
   sendmany
   sendtoaddress
-  sethdseed
-  setlabel
   settxfee
-  setwalletflag
   signmessage
-  signrawtransactionwithwallet
-  unloadwallet
-  upgradewallet
-  walletcreatefundedpsbt
-  walletlock
-  walletpassphrase
-  walletpassphrasechange
-  walletprocesspsbt
-
