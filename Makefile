@@ -17,3 +17,9 @@ help:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+release:
+	rm -rf hivecoin_developer
+	mkdir hivecoin_developer
+	cp -r ./_build/html/* ./hivecoin_developer
+	zip -r hivecoin_developer.zip ./hivecoin_developer
