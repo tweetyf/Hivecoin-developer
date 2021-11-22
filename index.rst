@@ -10,6 +10,7 @@ Welcome to Hive Coin developer's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   mining/index
    reference/index
 
 
