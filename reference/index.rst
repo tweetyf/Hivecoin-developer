@@ -1,5 +1,5 @@
-Reference
-=========
+API Reference
+=============
 
 Find technical details and API documentation.
 

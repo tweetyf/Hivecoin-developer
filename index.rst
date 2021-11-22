@@ -6,6 +6,17 @@
 Welcome to Hive Coin developer's documentation!
 ===============================================
 
+Website:
+
+https://www.hivecoin.org/
+
+
+White Paper of Hive Coin:
+
+https://github.com/HiveProject2021/Hivecoin/blob/main/whitepaper/README.md
+
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
